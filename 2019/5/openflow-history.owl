@@ -1,0 +1,342 @@
+@prefix : <http://github.com/osearbhain/ontologies/2019/5/openflow-history/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://github.com/osearbhain/ontologies/2019/5/openflow-history/> .
+
+<http://github.com/osearbhain/ontologies/2019/5/openflow-history> rdf:type owl:Ontology ;
+                                                                          owl:versionIRI <http://github.com/osearbhain/ontologies/2019/5/openflow-history/0.7> ;
+                                                                          owl:imports <http://ontology.eil.utoronto.ca/icity/Change> ,
+                                                                                      <http://www.gsi.dit.upm.es/ontologies/sdndl/nml-base.owl> ;
+                                                                          rdf:name "change"^^xsd:string ,
+                                                                                   "nml"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#name
+rdf:name rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://schemas.ogf.org/nml/2013/05/base#hasLink
+<http://schemas.ogf.org/nml/2013/05/base#hasLink> rdf:type owl:ObjectProperty .
+
+
+###  http://schemas.ogf.org/nml/2013/05/base#hasPort
+<http://schemas.ogf.org/nml/2013/05/base#hasPort> rdf:type owl:ObjectProperty .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasConnectionFrom
+:hasConnectionFrom rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Link> ;
+                   rdfs:range <http://schemas.ogf.org/nml/2013/05/base#Port> .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasController
+:hasController rdf:type owl:ObjectProperty ;
+               rdfs:domain :Topology ;
+               rdfs:range :Controller .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasFlowTable
+:hasFlowTable rdf:type owl:ObjectProperty ;
+              rdfs:domain :Switch ;
+              rdfs:range :FlowTable .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasHost
+:hasHost rdf:type owl:ObjectProperty ;
+         rdfs:domain :Topology ;
+         rdfs:range :Host .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasSwitch
+:hasSwitch rdf:type owl:ObjectProperty ;
+           rdfs:domain :Topology ;
+           rdfs:range :Switch .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasTableEntry
+:hasTableEntry rdf:type owl:ObjectProperty ;
+               rdfs:domain :FlowTable ;
+               rdfs:range :FlowRule .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/hasConnectionTo
+:hasConnectionTo rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Port> ;
+                 rdfs:range <http://schemas.ogf.org/nml/2013/05/base#Link> .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/isControlledBy
+:isControlledBy rdf:type owl:ObjectProperty ;
+                rdfs:domain :Switch ;
+                rdfs:range :Controller .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/OpenflowHistoryDataProperty
+:OpenflowHistoryDataProperty rdf:type owl:DatatypeProperty .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/cookie
+:cookie rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+        rdfs:domain :FlowRule ,
+                    :FlowRulePD ;
+        rdfs:range xsd:integer .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/counters
+:counters rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+          rdfs:domain :FlowRule ;
+          rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/dpid
+:dpid rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+      rdfs:domain :Switch ,
+                  :SwitchPD ;
+      rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/instructionSet
+:instructionSet rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+                rdfs:domain :FlowRule ;
+                rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/ipAddress
+:ipAddress rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+           rdfs:domain :Controller ,
+                       :ControllerPD ,
+                       :Host ,
+                       :HostPD ,
+                       :Switch ;
+           rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/macAddress
+:macAddress rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+            rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Port> ,
+                        :Controller ,
+                        :ControllerPD ,
+                        :Host ,
+                        :HostPD ;
+            rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/matchFields
+:matchFields rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+             rdfs:domain :FlowRule ;
+             rdfs:range xsd:string .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/openFlowVersion
+:openFlowVersion rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+                 rdfs:domain :Switch ;
+                 rdfs:range xsd:integer .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/priority
+:priority rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+          rdfs:domain :FlowRule ;
+          rdfs:range xsd:integer .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/tcpPort
+:tcpPort rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
+         rdfs:domain :Controller ,
+                     :ControllerPD ,
+                     :Switch ;
+         rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schemas.ogf.org/nml/2013/05/base#Link
+<http://schemas.ogf.org/nml/2013/05/base#Link> rdf:type owl:Class ;
+                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasConnectionFrom ;
+                                                                 owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass <http://schemas.ogf.org/nml/2013/05/base#Port>
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/existsAt> ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasConnectionFrom ;
+                                                                 owl:maxQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass <http://schemas.ogf.org/nml/2013/05/base#Port>
+                                                               ] .
+
+
+###  http://schemas.ogf.org/nml/2013/05/base#NetworkObject
+<http://schemas.ogf.org/nml/2013/05/base#NetworkObject> rdf:type owl:Class .
+
+
+###  http://schemas.ogf.org/nml/2013/05/base#Node
+<http://schemas.ogf.org/nml/2013/05/base#Node> rdf:type owl:Class .
+
+
+###  http://schemas.ogf.org/nml/2013/05/base#Port
+<http://schemas.ogf.org/nml/2013/05/base#Port> rdf:type owl:Class ;
+                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasConnectionTo ;
+                                                                 owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass <http://schemas.ogf.org/nml/2013/05/base#Link>
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :hasConnectionTo ;
+                                                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass <http://schemas.ogf.org/nml/2013/05/base#Link>
+                                                               ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/Controller
+:Controller rdf:type owl:Class ;
+            rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
+                            <http://schemas.ogf.org/nml/2013/05/base#NetworkObject> .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/ControllerPD
+:ControllerPD rdf:type owl:Class ;
+              rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/hasManifestation> ;
+                                owl:someValuesFrom :Controller
+                              ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/FlowRule
+:FlowRule rdf:type owl:Class ;
+          rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
+                          :TableEntry .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/FlowRulePD
+:FlowRulePD rdf:type owl:Class ;
+            rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/hasManifestation> ;
+                              owl:someValuesFrom :FlowRule
+                            ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/FlowTable
+:FlowTable rdf:type owl:Class ;
+           rdfs:subClassOf :Table ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTableEntry ;
+                             owl:someValuesFrom :FlowRulePD
+                           ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/Host
+:Host rdf:type owl:Class ;
+      rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
+                      <http://schemas.ogf.org/nml/2013/05/base#NetworkObject> ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://schemas.ogf.org/nml/2013/05/base#hasPort> ;
+                        owl:someValuesFrom <http://schemas.ogf.org/nml/2013/05/base#Port>
+                      ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/MigratedHost
+:MigratedHost rdf:type owl:Class ;
+      rdfs:subClassOf :Host ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <http://schemas.ogf.org/nml/2013/05/base#hasPort> ;
+                        owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:someValuesFrom <http://schemas.ogf.org/nml/2013/05/base#Port>
+                      ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/HostPD
+:HostPD rdf:type owl:Class ;
+        rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/hasManifestation> ;
+                          owl:someValuesFrom :Host
+                        ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/Switch
+:Switch rdf:type owl:Class ;
+        rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
+                        <http://schemas.ogf.org/nml/2013/05/base#Node> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty <http://schemas.ogf.org/nml/2013/05/base#hasPort> ;
+                          owl:someValuesFrom <http://schemas.ogf.org/nml/2013/05/base#Port>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasFlowTable ;
+                          owl:someValuesFrom :FlowTable
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isControlledBy ;
+                          owl:someValuesFrom :Controller
+                        ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/SwitchPD
+:SwitchPD rdf:type owl:Class ;
+          rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/hasManifestation> ;
+                            owl:someValuesFrom :Switch
+                          ] .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/Table
+:Table rdf:type owl:Class .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/TableEntry
+:TableEntry rdf:type owl:Class .
+
+
+###  http://github.com/osearbhain/ontologies/2019/5/openflow-history/Topology
+:Topology rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://schemas.ogf.org/nml/2013/05/base#hasLink> ;
+                            owl:someValuesFrom <http://schemas.ogf.org/nml/2013/05/base#Link>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasController ;
+                            owl:someValuesFrom :ControllerPD
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHost ;
+                            owl:someValuesFrom :HostPD
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasSwitch ;
+                            owl:someValuesFrom :SwitchPD
+                          ] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
