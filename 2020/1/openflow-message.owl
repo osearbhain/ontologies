@@ -1,13 +1,13 @@
-@prefix : <http://github.com/osearbhain/ontologies/2020/1/openflow-message/> .
+@prefix : <http://www.purl.org/osearbhain/ontologies/openflow-message/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://github.com/osearbhain/ontologies/2020/1/openflow-message/> .
+@base <http://www.purl.org/osearbhain/ontologies/openflow-message/> .
 
-<http://github.com/osearbhain/ontologies/2020/1/openflow-message> rdf:type owl:Ontology ;
-                                                                          owl:versionIRI <http://github.com/osearbhain/ontologies/2020/1/openflow-message/0.4> ;
+<http://www.purl.org/osearbhain/ontologies/openflow-message> rdf:type owl:Ontology ;
+                                                                          owl:versionIRI <http://www.purl.org/osearbhain/ontologies/openflow-message/0.4> ;
                                                                           owl:imports <http://ontology.eil.utoronto.ca/icity/Change> ;
                                                                           rdf:name "change"^^xsd:string .
 
@@ -23,74 +23,74 @@ rdf:name rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/OpenFlowMessageDataProperty
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/OpenFlowMessageDataProperty
 :OpenFlowMessageDataProperty rdf:type owl:DatatypeProperty .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/command
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/command
 :command rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
          rdfs:domain :FlowModMessage ;
          rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/destinationIPAddress
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/destinationIPAddress
 :destinationIPAddress rdf:type owl:DatatypeProperty ;
                       rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                       rdfs:domain :OpenFlowMessage ;
                       rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/destinationMACAddress
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/destinationMACAddress
 :destinationMACAddress rdf:type owl:DatatypeProperty ;
                        rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                        rdfs:domain :OpenFlowMessage ;
                        rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/destinationPort
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/destinationPort
 :destinationPort rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                  rdfs:domain :OpenFlowMessage ;
                  rdfs:range xsd:integer .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/messageType
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/messageType
 :messageType rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
              rdfs:domain :OpenFlowMessage ;
              rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/openFlowVersion
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/openFlowVersion
 :openFlowVersion rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                  rdfs:domain :OpenFlowMessage ;
                  rdfs:range xsd:integer .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/sourceIPAddress
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/sourceIPAddress
 :sourceIPAddress rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                  rdfs:domain :OpenFlowMessage ;
                  rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/sourceMACAddress
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/sourceMACAddress
 :sourceMACAddress rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                   rdfs:domain :OpenFlowMessage ;
                   rdfs:range xsd:string .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/sourcePort
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/sourcePort
 :sourcePort rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
             rdfs:domain :OpenFlowMessage ;
             rdfs:range xsd:integer .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/transactionID
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/transactionID
 :transactionID rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf :OpenFlowMessageDataProperty ;
                rdfs:domain :OpenFlowMessage ;
@@ -101,112 +101,112 @@ rdf:name rdf:type owl:AnnotationProperty .
 #    Classes
 #################################################################
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/BarrierReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/BarrierReply
 :BarrierReply rdf:type owl:Class ;
               rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/BarrierRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/BarrierRequest
 :BarrierRequest rdf:type owl:Class ;
                 rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/BundleAddMessage
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/BundleAddMessage
 :BundleAddMessage rdf:type owl:Class ;
                   rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/BundleControl
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/BundleControl
 :BundleControl rdf:type owl:Class ;
                rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/EchoReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/EchoReply
 :EchoReply rdf:type owl:Class ;
            rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/EchoRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/EchoRequest
 :EchoRequest rdf:type owl:Class ;
              rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/Error
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/Error
 :Error rdf:type owl:Class ;
        rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/Experimenter
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/Experimenter
 :Experimenter rdf:type owl:Class ;
               rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/FeaturesReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/FeaturesReply
 :FeaturesReply rdf:type owl:Class ;
                rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/FeaturesRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/FeaturesRequest
 :FeaturesRequest rdf:type owl:Class ;
                  rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/FlowModMessage
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/FlowModMessage
 :FlowModMessage rdf:type owl:Class ;
                 rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/FlowRemoved
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/FlowRemoved
 :FlowRemoved rdf:type owl:Class ;
              rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/GetAsyncReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/GetAsyncReply
 :GetAsyncReply rdf:type owl:Class ;
                rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/GetAsyncRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/GetAsyncRequest
 :GetAsyncRequest rdf:type owl:Class ;
                  rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/GetConfigReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/GetConfigReply
 :GetConfigReply rdf:type owl:Class ;
                 rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/GetConfigRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/GetConfigRequest
 :GetConfigRequest rdf:type owl:Class ;
                   rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/GroupMod
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/GroupMod
 :GroupMod rdf:type owl:Class ;
           rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/Hello
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/Hello
 :Hello rdf:type owl:Class ;
        rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/MeterMod
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/MeterMod
 :MeterMod rdf:type owl:Class ;
           rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/MultipartReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/MultipartReply
 :MultipartReply rdf:type owl:Class ;
                 rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/MultipartRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/MultipartRequest
 :MultipartRequest rdf:type owl:Class ;
                   rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/OpenFlowMessage
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/OpenFlowMessage
 :OpenFlowMessage rdf:type owl:Class ;
                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://ontology.eil.utoronto.ca/icity/Change/existsAt> ;
@@ -215,82 +215,82 @@ rdf:name rdf:type owl:AnnotationProperty .
                                  ] .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/PacketInMessage
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/PacketInMessage
 :PacketInMessage rdf:type owl:Class ;
                  rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/PacketOutMessage
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/PacketOutMessage
 :PacketOutMessage rdf:type owl:Class ;
                   rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/PortMod
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/PortMod
 :PortMod rdf:type owl:Class ;
          rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/PortStatus
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/PortStatus
 :PortStatus rdf:type owl:Class ;
             rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/QueueGetConfigReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/QueueGetConfigReply
 :QueueGetConfigReply rdf:type owl:Class ;
                      rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/QueueGetConfigRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/QueueGetConfigRequest
 :QueueGetConfigRequest rdf:type owl:Class ;
                        rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/RequestForward
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/RequestForward
 :RequestForward rdf:type owl:Class ;
                 rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/RoleReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/RoleReply
 :RoleReply rdf:type owl:Class ;
            rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/RoleRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/RoleRequest
 :RoleRequest rdf:type owl:Class ;
              rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/RoleStatus
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/RoleStatus
 :RoleStatus rdf:type owl:Class ;
             rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/SetAsync
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/SetAsync
 :SetAsync rdf:type owl:Class ;
           rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/SetConfig
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/SetConfig
 :SetConfig rdf:type owl:Class ;
            rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/StatisticsReply
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/StatisticsReply
 :StatisticsReply rdf:type owl:Class ;
                  rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/StatisticsRequest
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/StatisticsRequest
 :StatisticsRequest rdf:type owl:Class ;
                    rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/TableMod
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/TableMod
 :TableMod rdf:type owl:Class ;
           rdfs:subClassOf :OpenFlowMessage .
 
 
-###  http://github.com/osearbhain/ontologies/2020/1/openflow-message/TableStatus
+###  http://www.purl.org/osearbhain/ontologies/openflow-message/TableStatus
 :TableStatus rdf:type owl:Class ;
              rdfs:subClassOf :OpenFlowMessage .
 
