@@ -1,13 +1,13 @@
-@prefix : <http://www.purl.org/osearbhain/ontologies/openflow-history/> .
+@prefix : <http://www.purl.org/osearbhain/ontologies/dcn-history/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.purl.org/osearbhain/ontologies/openflow-history/> .
+@base <http://www.purl.org/osearbhain/ontologies/dcn-history/> .
 
-<http://www.purl.org/osearbhain/ontologies/openflow-history> rdf:type owl:Ontology ;
-                                                                          owl:versionIRI <http://www.purl.org/osearbhain/ontologies/openflow-history/0.7> ;
+<http://www.purl.org/osearbhain/ontologies/dcn-history> rdf:type owl:Ontology ;
+                                                                          owl:versionIRI <http://www.purl.org/osearbhain/ontologies/dcn-history/0.7> ;
                                                                           owl:imports <http://ontology.eil.utoronto.ca/icity/Change> ,
                                                                                       <http://www.gsi.dit.upm.es/ontologies/sdndl/nml-base.owl> ;
                                                                           rdf:name "change"^^xsd:string ,
@@ -33,49 +33,49 @@ rdf:name rdf:type owl:AnnotationProperty .
 <http://schemas.ogf.org/nml/2013/05/base#hasPort> rdf:type owl:ObjectProperty .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasConnectionFrom
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasConnectionFrom
 :hasConnectionFrom rdf:type owl:ObjectProperty ;
                    rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Link> ;
                    rdfs:range <http://schemas.ogf.org/nml/2013/05/base#Port> .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasController
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasController
 :hasController rdf:type owl:ObjectProperty ;
                rdfs:domain :Topology ;
                rdfs:range :Controller .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasFlowTable
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasFlowTable
 :hasFlowTable rdf:type owl:ObjectProperty ;
               rdfs:domain :Switch ;
               rdfs:range :FlowTable .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasHost
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasHost
 :hasHost rdf:type owl:ObjectProperty ;
          rdfs:domain :Topology ;
          rdfs:range :Host .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasSwitch
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasSwitch
 :hasSwitch rdf:type owl:ObjectProperty ;
            rdfs:domain :Topology ;
            rdfs:range :Switch .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasTableEntry
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasTableEntry
 :hasTableEntry rdf:type owl:ObjectProperty ;
                rdfs:domain :FlowTable ;
                rdfs:range :FlowRule .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/hasConnectionTo
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/hasConnectionTo
 :hasConnectionTo rdf:type owl:ObjectProperty ;
                  rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Port> ;
                  rdfs:range <http://schemas.ogf.org/nml/2013/05/base#Link> .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/isControlledBy
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/isControlledBy
 :isControlledBy rdf:type owl:ObjectProperty ;
                 rdfs:domain :Switch ;
                 rdfs:range :Controller .
@@ -85,11 +85,11 @@ rdf:name rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/OpenflowHistoryDataProperty
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/OpenflowHistoryDataProperty
 :OpenflowHistoryDataProperty rdf:type owl:DatatypeProperty .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/cookie
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/cookie
 :cookie rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
         rdfs:domain :FlowRule ,
@@ -97,14 +97,14 @@ rdf:name rdf:type owl:AnnotationProperty .
         rdfs:range xsd:integer .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/counters
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/counters
 :counters rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
           rdfs:domain :FlowRule ;
           rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/dpid
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/dpid
 :dpid rdf:type owl:DatatypeProperty ;
       rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
       rdfs:domain :Switch ,
@@ -112,14 +112,14 @@ rdf:name rdf:type owl:AnnotationProperty .
       rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/instructionSet
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/instructionSet
 :instructionSet rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
                 rdfs:domain :FlowRule ;
                 rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/ipAddress
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/ipAddress
 :ipAddress rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
            rdfs:domain :Controller ,
@@ -130,7 +130,7 @@ rdf:name rdf:type owl:AnnotationProperty .
            rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/macAddress
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/macAddress
 :macAddress rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
             rdfs:domain <http://schemas.ogf.org/nml/2013/05/base#Port> ,
@@ -141,28 +141,28 @@ rdf:name rdf:type owl:AnnotationProperty .
             rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/matchFields
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/matchFields
 :matchFields rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
              rdfs:domain :FlowRule ;
              rdfs:range xsd:string .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/openFlowVersion
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/openFlowVersion
 :openFlowVersion rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
                  rdfs:domain :Switch ;
                  rdfs:range xsd:integer .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/priority
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/priority
 :priority rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
           rdfs:domain :FlowRule ;
           rdfs:range xsd:integer .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/tcpPort
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/tcpPort
 :tcpPort rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf :OpenflowHistoryDataProperty ;
          rdfs:domain :Controller ,
@@ -216,13 +216,13 @@ rdf:name rdf:type owl:AnnotationProperty .
                                                                ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/Controller
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/Controller
 :Controller rdf:type owl:Class ;
             rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
                             <http://schemas.ogf.org/nml/2013/05/base#NetworkObject> .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/ControllerPD
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/ControllerPD
 :ControllerPD rdf:type owl:Class ;
               rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
                               [ rdf:type owl:Restriction ;
@@ -231,13 +231,13 @@ rdf:name rdf:type owl:AnnotationProperty .
                               ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/FlowRule
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/FlowRule
 :FlowRule rdf:type owl:Class ;
           rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
                           :TableEntry .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/FlowRulePD
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/FlowRulePD
 :FlowRulePD rdf:type owl:Class ;
             rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
                             [ rdf:type owl:Restriction ;
@@ -246,7 +246,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                             ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/FlowTable
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/FlowTable
 :FlowTable rdf:type owl:Class ;
            rdfs:subClassOf :Table ,
                            [ rdf:type owl:Restriction ;
@@ -255,7 +255,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                            ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/Host
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/Host
 :Host rdf:type owl:Class ;
       rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
                       <http://schemas.ogf.org/nml/2013/05/base#NetworkObject> ,
@@ -265,7 +265,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                       ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/MigratedHost
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/MigratedHost
 :MigratedHost rdf:type owl:Class ;
       rdfs:subClassOf :Host ,
                       [ rdf:type owl:Restriction ;
@@ -275,7 +275,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                       ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/HostPD
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/HostPD
 :HostPD rdf:type owl:Class ;
         rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
                         [ rdf:type owl:Restriction ;
@@ -284,7 +284,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                         ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/Switch
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/Switch
 :Switch rdf:type owl:Class ;
         rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/Manifestation> ,
                         <http://schemas.ogf.org/nml/2013/05/base#Node> ,
@@ -302,7 +302,7 @@ rdf:name rdf:type owl:AnnotationProperty .
                         ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/SwitchPD
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/SwitchPD
 :SwitchPD rdf:type owl:Class ;
           rdfs:subClassOf <http://ontology.eil.utoronto.ca/icity/Change/TimeVaryingConcept> ,
                           [ rdf:type owl:Restriction ;
@@ -311,15 +311,15 @@ rdf:name rdf:type owl:AnnotationProperty .
                           ] .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/Table
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/Table
 :Table rdf:type owl:Class .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/TableEntry
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/TableEntry
 :TableEntry rdf:type owl:Class .
 
 
-###  http://www.purl.org/osearbhain/ontologies/openflow-history/Topology
+###  http://www.purl.org/osearbhain/ontologies/dcn-history/Topology
 :Topology rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty <http://schemas.ogf.org/nml/2013/05/base#hasLink> ;
